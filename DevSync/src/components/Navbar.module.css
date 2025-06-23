@@ -1,0 +1,43 @@
+.logoutButton {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #a21caf 0%, #be185d 100%);
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.08);
+}
+
+.logoutButton:hover {
+  background: linear-gradient(90deg, #be185d 0%, #a21caf 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.navbar {
+  background: #0f172a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--accent, #a21caf);
+}

@@ -1,0 +1,363 @@
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes gradient-xy {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700;
+  }
+  to {
+    box-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.homeContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 0 1rem;
+  background: linear-gradient(to bottom right, #1f2937, #4b0082, #ff1493);
+  transition: all 0.7s;
+  overflow: hidden;
+}
+
+.animatedBlob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(2rem);
+}
+
+.blob1 {
+  width: 24rem;
+  height: 24rem;
+  background: linear-gradient(to right, #ff0080, #8b5cf6);
+  opacity: 0.2;
+  top: -150px;
+  left: -150px;
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.blob2 {
+  width: 20rem;
+  height: 20rem;
+  background: linear-gradient(to right, #00d4ff, #00ff88);
+  opacity: 0.25;
+  bottom: -100px;
+  right: -100px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.blob3 {
+  width: 16rem;
+  height: 16rem;
+  background: linear-gradient(to right, #ff6b35, #ffd700);
+  opacity: 0.3;
+  top: 50%;
+  left: 25%;
+  animation: bounce-slow 3s infinite;
+}
+
+.blob4 {
+  width: 12rem;
+  height: 12rem;
+  background: linear-gradient(to right, #8b5cf6, #ff0080);
+  opacity: 0.2;
+  top: 33.33%;
+  right: 33.33%;
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.sparkle {
+  position: absolute;
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.sparkleIcon {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.sparkle1 { top: 5rem; left: 5rem; }
+.sparkle1 svg { width: 2rem; height: 2rem; color: #ffd700; }
+
+.sparkle2 { top: 10rem; right: 8rem; animation-delay: 0.5s; }
+.sparkle2 svg { width: 1.5rem; height: 1.5rem; color: #ff0080; }
+
+.sparkle3 { bottom: 8rem; left: 33.33%; animation-delay: 1s; }
+.sparkle3 svg { width: 1.75rem; height: 1.75rem; color: #00d4ff; }
+
+.mainContent {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1024px;
+  text-align: center;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.header {
+  margin-bottom: 2rem;
+  animation: slide-down 0.5s ease-out;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  background: linear-gradient(to right, #00d4ff, #8b5cf6, #ff0080, #ff6b35);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-xy 15s ease infinite;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  animation: bounce-slow 3s infinite;
+}
+
+.iconRocket { color: #00ff88; }
+.iconUsers { color: #00d4ff; animation-delay: 0.2s; }
+.iconCode { color: #ff0080; animation-delay: 0.4s; }
+
+.descriptionContainer {
+  animation: slide-up 0.5s ease-out;
+  animation-delay: 0.3s;
+}
+
+.description {
+  font-size: 1.5rem;
+  color: #d1d5db;
+  margin-bottom: 3rem;
+  line-height: 1.75;
+  max-width: 896px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description .highlight { font-weight: 600; }
+.description .highlightGreen { color: #00ff88; }
+.description .highlightBlue { color: #00d4ff; }
+.description .highlightPink { color: #ff0080; }
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  animation: slide-up 0.5s ease-out;
+  animation-delay: 0.6s;
+}
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.featureCard {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+}
+
+.featureCard:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.featureIconContainer {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featureCard:hover .featureIconContainer {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.featureIconContainer.users {
+  background: linear-gradient(to right, #00d4ff, #8b5cf6);
+}
+
+.featureIconContainer.code {
+  background: linear-gradient(to right, #00ff88, #00d4ff);
+}
+
+.featureIconContainer.rocket {
+  background: linear-gradient(to right, #ff0080, #ff6b35);
+}
+
+.featureIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.featureTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.featureDescription {
+  color: #d1d5db;
+  font-size: 0.875rem;
+}
+
+.ctaContainer {
+  animation: scale-in 0.3s ease-out;
+  animation-delay: 0.9s;
+}
+
+.ctaButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.ctaButton span {
+  position: relative;
+  z-index: 10;
+}
+
+.ctaButton .icon {
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.ctaButton:hover .icon {
+  transform: translateX(4px);
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #00ff88, #00d4ff, #8b5cf6);
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.ctaButton.getStarted::before {
+  background: linear-gradient(to right, #00d4ff, #8b5cf6, #ff0080);
+}
+
+.ctaButton .overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.ctaButton:hover .overlay {
+  opacity: 1;
+}
+
+.ctaButton.dashboard .overlay {
+  background: linear-gradient(to right, #8b5cf6, #ff0080, #ff6b35);
+}
+
+.ctaButton.getStarted .overlay {
+  background: linear-gradient(to right, #ff0080, #ff6b35, #ffd700);
+} 

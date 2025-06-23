@@ -1,0 +1,229 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3b82f6 0%, #a21caf 60%, #ec4899 100%);
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 700px;
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #a21caf 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.08);
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #18181b;
+}
+
+.email {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #a21caf;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bio, .noBio {
+  color: #374151;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillTag {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.removeSkillBtn {
+  background: none;
+  border: none;
+  color: #d1d5db;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.removeSkillBtn:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.input {
+  width: 100%;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: #6b7280;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.textarea {
+  width: 100%;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.textarea::placeholder {
+  color: #6b7280;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+.skillsInputContainer {
+  margin-bottom: 1rem;
+}
+
+.link {
+  color: #3b82f6;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #a21caf;
+}
+
+.button {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(90deg, #3b82f6 0%, #a21caf 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #be185d 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.saveButton {
+  background: linear-gradient(to right, #16a34a, #34d399);
+}
+
+.saveButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 211, 153, 0.4);
+}
+
+.cancelButton {
+  background: linear-gradient(to right, #52525b, #71717a);
+}
+
+.cancelButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(113, 113, 122, 0.4);
+}
+
+@media (max-width: 700px) {
+  .card {
+    padding: 1.2rem;
+    border-radius: 1rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+}

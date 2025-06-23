@@ -1,0 +1,312 @@
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pageLoader, .error {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+
+.error {
+  color: #fca5a5;
+  background-color: rgba(153, 27, 27, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  animation: fade-in 0.5s ease-out;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  animation: slide-down 0.5s ease-out;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.headerInfo h2 {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #00d4ff, #8b5cf6, #ff0080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.headerInfo p {
+  color: #d1d5db;
+  max-width: 80ch;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.75rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.chatButton {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+}
+
+.chatButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.deleteButton {
+  background: linear-gradient(to right, #dc2626, #ef4444);
+}
+
+.deleteButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+.skillsList, .membersList, .githubSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.listTitle {
+  font-weight: 600;
+  color: #d1d5db;
+}
+
+.skillTag {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.memberTag {
+  background-color: rgba(217, 249, 157, 0.2);
+  color: #a3e635;
+  padding: 0.3rem 0.8rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toggleButton {
+  margin-left: auto;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.1);
+  color: #e5e7eb;
+}
+
+.applicationList {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.applicationItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.applicantInfo p:first-child {
+  font-weight: 600;
+  color: white;
+}
+.applicantInfo p:last-child {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.applicationActions button {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+.acceptButton { background: #16a34a; }
+.rejectButton { background: #dc2626; }
+
+.badge {
+  background-color: #dc2626;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 9999px;
+  animation: pulse 1.5s infinite;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+}
+.emptyState svg {
+  margin: 0 auto 0.5rem auto;
+  font-size: 2rem;
+}
+
+/* Task Section */
+.taskForm {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.taskInput {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+}
+.taskInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.addTaskButton {
+  background: linear-gradient(to right, #1d4ed8, #2563eb);
+}
+
+.taskColumns {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .taskColumns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.taskColumn {
+  background: rgba(0,0,0,0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.columnTitle {
+  font-weight: 700;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 100px;
+}
+
+.taskItem {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #3b82f6;
+  border-radius: 0 0.5rem 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.taskStatusSelect {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  font-size: 0.8rem;
+}
+
+.githubLink {
+  color: #60a5fa;
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.githubLink:hover {
+  background-color: rgba(96, 165, 250, 0.2);
+  border-color: rgba(96, 165, 250, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(96, 165, 250, 0.2);
+} 

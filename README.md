@@ -38,5 +38,12 @@ This is the frontend for DevSync, a modern web application designed to help deve
    npm run dev
    ```
 
+## 📸 Screenshots
+
+Below are some visuals from the project:
+
+![React Logo](./DevSync/src/assets/react.svg)
+![Vite Logo](./DevSync/public/vite.svg)
+
 ---
 Connecting developers, one project at a time.

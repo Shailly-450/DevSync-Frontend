@@ -49,6 +49,7 @@ Below are some visuals from the project:
 ![Screenshot 5](./assets/5.png)
 ![Screenshot 6](./assets/6.png)
 ![Screenshot 7](./assets/7.png)
+![Screenshot 8](./assets/8.png)
 
 ---
 Connecting developers, one project at a time.

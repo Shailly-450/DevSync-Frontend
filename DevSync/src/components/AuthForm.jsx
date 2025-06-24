@@ -34,7 +34,7 @@ export default function AuthForm({ onAuthSuccess, buttonClass }) {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = `${BACKEND_URL}/api/auth/google`;
+    window.location.href = 'https://devsync-backend-7jal.onrender.com/api/auth/google';
   };
 
   return (
@@ -80,7 +80,7 @@ export default function AuthForm({ onAuthSuccess, buttonClass }) {
         style={{ width: '100%', background: 'linear-gradient(90deg,#ef4444 0%,#f59e42 100%)', marginBottom: 16, marginTop: 8 }}
         onClick={handleGoogleLogin}
       >
-        Continue with Google
+        Sign in with Google
       </button>
       <p style={{ marginTop: 16, textAlign: 'center', fontSize: 15 }}>
         {isLogin ? "Don't have an account?" : "Already have an account?"}

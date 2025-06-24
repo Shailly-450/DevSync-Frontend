@@ -2,7 +2,7 @@ import axios from "axios";
 import { API_BASE } from "./env";
 import { handleTestModeAPI } from './testMode';
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://devsync-backend-7jal.onrender.com';
 
 export const api = axios.create({
   baseURL: BACKEND_URL,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { fetchProjects, applyToProject, getRecommendedProjects } from "../utils/api";
+import { getProjects, applyToProject, getRecommendedProjects } from "../utils/api";
 import { useAuth } from "../App";
 import { FiSearch, FiBriefcase, FiPlusCircle, FiCompass, FiTrendingUp, FiUsers, FiStar, FiThumbsUp } from 'react-icons/fi';
 import ProjectCard from '../components/ProjectCard';
@@ -21,7 +21,7 @@ export default function Dashboard() {
       setLoading(true);
       try {
         const [projectsRes, recommendedRes] = await Promise.all([
-          fetchProjects(),
+          getProjects(),
           getRecommendedProjects()
         ]);
         

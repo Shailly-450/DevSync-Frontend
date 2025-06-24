@@ -10,6 +10,9 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  // Check if using test account
+  const isTestMode = user?.id === 'test-user';
+
   useEffect(() => {
     // Close dropdown when clicking outside
     const handleClickOutside = (event) => {
@@ -37,6 +40,11 @@ export default function Navbar() {
         {isAuthenticated ? (
           <>
             <NavLink to="/profile" className={({ isActive }) => styles.navbar + ' ' + (isActive ? styles.active : '')}><FiUser /> Profile</NavLink>
+            {isTestMode && (
+              <div className="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">
+                Test Mode
+              </div>
+            )}
             <button onClick={handleLogout} className={styles.logoutButton} style={{ marginLeft: '1rem' }}>
               <FiLogOut /> Logout
             </button>

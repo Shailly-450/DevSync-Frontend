@@ -6,10 +6,15 @@ import styles from './AuthPage.module.css';
 
 export default function AuthPage() {
   const navigate = useNavigate();
-  const { login, isAuthenticated } = useAuth();
+  const { login, skipAuth, isAuthenticated } = useAuth();
 
   const handleAuthSuccess = (userData, token) => {
     login(userData, token);
+    navigate('/dashboard');
+  };
+
+  const handleSkip = () => {
+    skipAuth();
     navigate('/dashboard');
   };
 
@@ -37,9 +42,25 @@ export default function AuthPage() {
             <p className={styles.subtitle}>Sign in to continue your journey</p>
           </div>
           <AuthForm onAuthSuccess={handleAuthSuccess} buttonClass={styles.button} />
+          
+          {/* Add Skip Authentication Button */}
+          <div className="mt-4 text-center">
+            <button
+              onClick={handleSkip}
+              className="px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            >
+              Skip Authentication (Test Mode)
+            </button>
+          </div>
+
           <div className={styles.signup}>
             Don't have an account?
             <a href="/signup" className={styles.signupLink}>Sign up</a>
+          </div>
+          
+          {/* Add Test Mode Banner */}
+          <div className="mt-4 p-2 bg-yellow-100 border border-yellow-400 text-yellow-700 text-sm rounded">
+            🔔 Test Mode: Click "Skip Authentication" to explore without signing in.
           </div>
         </div>
       </div>

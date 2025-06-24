@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../App';
-import { fetchProject, fetchMessages, sendMessage } from '../utils/api';
+import { getProject, getMessages, sendMessage } from '../utils/api';
 import { FiSend, FiArrowLeft, FiLoader } from 'react-icons/fi';
 import io from 'socket.io-client';
 import { BACKEND_URL } from '../utils/env';
@@ -41,8 +41,8 @@ export default function ProjectChatPage() {
 
     // Fetch initial project and message data
     Promise.all([
-      fetchProject(projectId),
-      fetchMessages(projectId)
+      getProject(projectId),
+      getMessages(projectId)
     ]).then(([projectRes, messagesRes]) => {
       setProject(projectRes.data);
       setMessages(messagesRes.data);

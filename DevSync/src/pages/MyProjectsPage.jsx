@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { fetchProjects } from "../utils/api";
+import { getProjects } from "../utils/api";
 import { useAuth } from "../App";
 import ProjectCard from '../components/ProjectCard';
 import { FiClipboard, FiPlusCircle, FiCompass } from 'react-icons/fi';
@@ -17,7 +17,7 @@ export default function MyProjectsPage() {
     if (!user) return;
 
     setLoading(true);
-    fetchProjects()
+    getProjects()
       .then((res) => {
         const allProjects = res.data;
         setMyProjects(allProjects.filter(p => 

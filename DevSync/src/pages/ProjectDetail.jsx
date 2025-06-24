@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link, useLocation } from 'react-router-dom';
-import { fetchProject, fetchTasks, createTask, updateTask, getProjectApplications, acceptApplication, rejectApplication, deleteProject } from "../utils/api";
+import { getProject, getTasks, createTask, updateTask, getProjectApplications, acceptApplication, rejectApplication, deleteProject } from "../utils/api";
 import { useAuth } from "../App";
 import { FiUserCheck, FiUserX, FiSend, FiUsers, FiClipboard, FiInbox, FiChevronDown, FiChevronUp, FiTrash2, FiMessageSquare } from 'react-icons/fi';
 import styles from './ProjectDetail.module.css';
@@ -42,7 +42,7 @@ export default function ProjectDetail({ projectId }) {
     const loadData = async () => {
       try {
         // Always try fetching fresh data. This is important for members to get latest updates.
-        const projectRes = await fetchProject(projectId);
+        const projectRes = await getProject(projectId);
         const freshProject = projectRes.data;
         setProject(freshProject);
 
@@ -50,7 +50,7 @@ export default function ProjectDetail({ projectId }) {
         const freshIsCreator = freshProject.creator._id === user._id;
 
         if (freshIsMember) {
-          const tasksRes = await fetchTasks(projectId);
+          const tasksRes = await getTasks(projectId);
           setTasks(tasksRes.data);
         }
         if (freshIsCreator) {
@@ -76,7 +76,7 @@ export default function ProjectDetail({ projectId }) {
       const actionFunc = action === 'accept' ? acceptApplication : rejectApplication;
       await actionFunc(appId);
       // After action, refetch all data to update UI correctly
-      const projectRes = await fetchProject(projectId);
+      const projectRes = await getProject(projectId);
       setProject(projectRes.data);
       const appsRes = await getProjectApplications(projectId);
       setApplications(appsRes.data);
@@ -103,7 +103,7 @@ export default function ProjectDetail({ projectId }) {
     try {
       await createTask(projectId, { title: newTask });
       setNewTask("");
-      const tasksRes = await fetchTasks(projectId);
+      const tasksRes = await getTasks(projectId);
       setTasks(tasksRes.data);
     } catch (error) {
       alert('Failed to add task.');
@@ -113,7 +113,7 @@ export default function ProjectDetail({ projectId }) {
   const handleStatusChange = async (taskId, status) => {
     try {
       await updateTask(projectId, taskId, { status });
-      const tasksRes = await fetchTasks(projectId);
+      const tasksRes = await getTasks(projectId);
       setTasks(tasksRes.data);
     } catch (error) {
       alert('Failed to update task.');

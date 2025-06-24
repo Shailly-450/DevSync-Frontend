@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { fetchProjects, applyToProject, getRecommendedProjects } from "../utils/api";
+import { getProjects, applyToProject, getRecommendedProjects } from "../utils/api";
 import { useAuth } from "../App";
 import { FiPlusCircle, FiSearch } from 'react-icons/fi';
 import BackButton from '../components/BackButton';
@@ -21,7 +21,7 @@ export default function Projects() {
       try {
         setLoading(true);
         const [projectsRes, recommendedRes] = await Promise.all([
-          fetchProjects(),
+          getProjects(),
           getRecommendedProjects()
         ]);
         setProjects(projectsRes.data);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { login, register } from "../utils/api";
-import { API_URL } from "../utils/env";
+import { BACKEND_URL } from "../utils/env";
 import styles from '../pages/AuthPage.module.css';
 
 export default function AuthForm({ onAuthSuccess, buttonClass }) {
@@ -34,7 +34,7 @@ export default function AuthForm({ onAuthSuccess, buttonClass }) {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = `${API_URL}/api/auth/google`;
+    window.location.href = `${BACKEND_URL}/api/auth/google`;
   };
 
   return (
